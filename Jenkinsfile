@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Checkout") {
             steps {
-                git url: 'https://github.com/falconetpt/dotnet-webapi-docker-example', branch: 'master'
+                git url: 'https://github.com/falconetpt/dotnet-webapi-docker-example/', branch: 'master'
             }
         }
        stage("run app") {
