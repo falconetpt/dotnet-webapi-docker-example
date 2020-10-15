@@ -8,8 +8,8 @@ pipeline {
         }
        stage("run app") {
         steps {
-            sh 'docker build -t dotnet .'
-            sh 'docker run -t -p 1234:5000 dotnetapidemo'
+            sh 'docker build -t dotnetapidemo . --no-cache'
+            sh 'docker run -t -p 1234:5000 dotnetapidemo '
         }
        }
     }
