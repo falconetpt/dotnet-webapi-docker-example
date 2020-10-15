@@ -14,4 +14,4 @@ FROM microsoft/dotnet:2.1-aspnetcore-runtime
 WORKDIR /HelloWorld
 COPY --from=build-env HelloWorld/out .
 
-CMD dotnet HelloWorld.dll --urls "http://*:$PORT"
+CMD dotnet HelloWorld.dll --urls "http://*:5000"
