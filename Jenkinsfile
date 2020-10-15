@@ -10,7 +10,7 @@ pipeline {
         steps {
             sh 'docker rm $(docker stop $(docker ps -a -q --filter ancestor=dotnetapidemo --format="{{.ID}}"))'
             sh 'docker build -t dotnetapidemo . --no-cache'
-            sh 'docker run -t -p 1234:5000 dotnetapidemo '
+            sh 'docker run -t -p 1234:5000 dotnetapidemo -d'
         }
        }
     }
