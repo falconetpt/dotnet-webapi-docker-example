@@ -11,7 +11,7 @@ pipeline {
             sh 'kill $(lsof -t -i:1234)'
             sh 'docker rm $(docker stop $(docker ps -a -q --filter ancestor=dotnetapidemo --format="{{.ID}}"))'
             sh 'docker build -t dotnetapidemo . --no-cache'
-            sh 'docker run -t -p 1234:5000 dotnetapidemo -d'
+            sh 'docker run -d -t -p 1234:5000 dotnetapidemo'
         }
        }
     }
